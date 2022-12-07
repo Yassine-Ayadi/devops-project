@@ -33,7 +33,7 @@ def deployApp() {
                sshagent(['deploy-credentials']) {
                     sh "scp -o StrictHostKeyChecking=no docker-compose.yml ${instance}:/home/jenkins"
                     sh "ssh -o StrictHostKeyChecking=no ${instance} ${shellCmd}"
-
+ }
 }
 
 def cleanUntaggedImages(String serverIp, String serverUser){
