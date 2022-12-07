@@ -53,7 +53,7 @@ pipeline {
         stage("deploy") {
             steps {
                 script {
-                    gv.deployApp("${DEPLOYMENT_SERVER_IP}","${DEPLOYMENT_SERVER_USER}")
+                    gv.deployApp()
                 }
             }
         }
