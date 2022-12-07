@@ -11,12 +11,9 @@ services:
     restart: always
     ports:
       - 5555:5432
-  api:
+  api: 
     container_name: api
-    image: devops-project
-    build:
-      context: ./
-      dockerfile: Dockerfile
+    image: yassine15/demo-app:spring-app-1.0
     depends_on:
       - postgresqldb
     ports:
