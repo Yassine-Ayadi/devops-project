@@ -5,8 +5,8 @@ def gv
 pipeline {
     agent any
     environment {
-        DEPLOYMENT_SERVER_IP = "192.168.122.101"
-        DEPLOYMENT_SERVER_USER= "sofiene"
+        DEPLOYMENT_SERVER_IP = "20.23.253.136"
+        DEPLOYMENT_SERVER_USER= "jenkins"
         SONARQUBE_SERVER_IP ="137.117.179.6"
         SONARQUBE_SERVER_USER="sonarqube"
         JENKINS_SERVER_IP ="20.23.253.136"
