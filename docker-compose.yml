@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  postgresqldb:
+    container_name: postgresqldb
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: devops
+      POSTGRES_PASSWORD: superStrongP@ss
+      POSTGRES_USER: postgres
+    restart: always
+    ports:
+      - 5555:5432
+  api:
+    container_name: api
+    image: devops-project
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - postgresqldb
+    ports:
+      - 8080:8080
+    restart: always
+
+volumes:
+  pgdata:
