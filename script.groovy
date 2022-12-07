@@ -28,11 +28,10 @@ def sonarScan() {
 
 def deployApp() {
          def instance = "jenkins@20.23.253.136"
-         def shellCmd = "docker-compose up"
+         def shellCmd = "docker-compose up -d"
 
                sshagent(credentials: ['deploy-credentials']) {
                     sh "scp -o StrictHostKeyChecking=no docker-compose.yml ${instance}:/home/jenkins"
-                    sh "scp -o StrictHostKeyChecking=no Dockerfile ${instance}:/home/jenkins"
                     sh "ssh -o StrictHostKeyChecking=no ${instance} ${shellCmd}"
  }
 }
