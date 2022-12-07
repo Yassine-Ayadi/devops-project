@@ -17,7 +17,7 @@ services:
     depends_on:
       - postgresqldb
     ports:
-      - 8080:8080
+      - 8082:8080
     restart: always
 
 volumes:
