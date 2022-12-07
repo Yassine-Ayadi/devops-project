@@ -30,7 +30,7 @@ def deployApp() {
          def instance = "jenkins@20.23.253.136"
          def shellCmd = "docker-compose up build"
 
-               sshagent([ credentials: 'deploy-credentials']) {
+               sshagent(credentials: ['deploy-credentials']) {
                     sh "scp -o StrictHostKeyChecking=no docker-compose.yml ${instance}:/home/jenkins"
                     sh "ssh -o StrictHostKeyChecking=no ${instance} ${shellCmd}"
  }
